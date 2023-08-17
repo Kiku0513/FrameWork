@@ -1,4 +1,4 @@
-package com.W3Schools.pages;
+    package com.W3Schools.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

@@ -16,8 +16,8 @@ public class LoginTest extends SeWrappers
 			launchBrowser("https://profile.w3schools.com/");
 			w3.loginW3Schools("bv.nirmal@gmail.com","Testing@123");
 			String pageTitle="My learning | W3Schools";
-			String actualTitle=se.getTitle();
 			Assert.assertTrue(driver.getTitle().equals(pageTitle));
+			//String actualTitle=se.getTitle();
 			//Assert.assertEquals(actualTitle,pageTitle);
 		}
 		catch(Exception ex)
