@@ -24,7 +24,7 @@ public class Reports
 		public static ExtentTest extentTest;
 		
 		
-		@BeforeSuite
+		@BeforeSuite(alwaysRun=true)
 		public void startReport()
 		{
 			try
@@ -82,7 +82,7 @@ public class Reports
 			}
 		}
 		
-		@AfterSuite
+		@AfterSuite(alwaysRun=true)
 		public void endReport()
 		{
 			try

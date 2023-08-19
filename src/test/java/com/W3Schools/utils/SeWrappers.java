@@ -82,7 +82,7 @@ public static WebDriver driver=null;
 		{
 			try
 			{
-				waitForMe(ele,20);
+				waitForMeExplicit(ele,20);
 				ele.clear();
 				ele.sendKeys(text);
 				Reports.reportStep("PASS", "Entered the given text ("+text+") successfully ");
@@ -102,7 +102,7 @@ public static WebDriver driver=null;
 		{
 			try
 			{
-				waitForMe(ele,20);
+				waitForMeExplicit(ele,20);
 				ele.click();
 				Reports.reportStep("PASS", "Clicked on the given webelement successfully ");
 
@@ -160,7 +160,7 @@ public static WebDriver driver=null;
 			}
 		}
 		//explicit wait
-		public void waitForMe(WebElement ele, int timeout)
+		public void waitForMeExplicit(WebElement ele, int timeout)
 		{
 			try
 			{
@@ -204,10 +204,12 @@ public static WebDriver driver=null;
 			{
 				Select sel = new Select(ele);
 				sel.selectByVisibleText(visibleText);
+				Reports.reportStep("PASS", "selectByVisibleText for Dropdown is Succesfull");
 			}
 			catch(Exception ex)
 			{
 				System.out.println("problem in selectByVisible text");
+				Reports.reportStep("FAIL", "Problem in selectByVisible text for Dropdown");
 				ex.printStackTrace();
 			}
 			
@@ -220,10 +222,13 @@ public static WebDriver driver=null;
 			{
 				Select sel = new Select(ele);
 				sel.selectByIndex(value);
+				Reports.reportStep("PASS", "SelectByIndex for Dropdown is Succesfull");
 			}
+			
 			catch(Exception ex)
 			{
 				System.out.println("problem in selectBy index");
+				Reports.reportStep("FAIL", "Problem in selectBy index for Dropdown");
 				ex.printStackTrace();
 			}
 		}
@@ -234,10 +239,12 @@ public static WebDriver driver=null;
 			{
 				Select sel = new Select(ele);
 				sel.selectByValue(value);
+				Reports.reportStep("PASS", "SelectByValue for Dropdown is Succesfull");
 			}
 			catch(Exception ex)
 			{
 				System.out.println("problem in selectBy value");
+				Reports.reportStep("FAIL", "Problem  in selectByValue for Dropdown");
 				ex.printStackTrace();
 			}
 		}
@@ -247,11 +254,13 @@ public static WebDriver driver=null;
 			try
 			{
 				Alert promptAlert= driver.switchTo().alert();
+				Reports.reportStep("PASS", "Accept Alert is Succesfull");
 				promptAlert.accept();
 			}
 			catch(Exception ex)
 			{
 				System.out.println("problem in accept alert");
+				Reports.reportStep("FAIL", "Problem  in accept alert");
 				ex.printStackTrace();
 			}
 		}
@@ -261,11 +270,13 @@ public static WebDriver driver=null;
 			try
 			{
 				Alert promptAlert= driver.switchTo().alert();
+				Reports.reportStep("PASS", "Dismiss Alert is Succesfull");
 				promptAlert.dismiss();
 			}
 			catch(Exception ex)
 			{
 				System.out.println("problem in dismiss alert");
+				Reports.reportStep("FAIL", "Problem  in Dismiss alert");
 				ex.printStackTrace();
 			}
 		}
@@ -277,12 +288,14 @@ public static WebDriver driver=null;
 				Alert alert= driver.switchTo().alert();
 
 				String alertText=alert.getText();
+				Reports.reportStep("PASS", "Get Text From Alert is Succesfull");
 				System.out.println(alertText);
 
 			}
 			catch(Exception ex)
 			{
 				System.out.println("problem in getText method");
+				Reports.reportStep("FAIL", "Problem  in Getting Text from alert");
 				ex.printStackTrace();
 			}
 		}
@@ -294,7 +307,7 @@ public static WebDriver driver=null;
 				Alert alert= driver.switchTo().alert();
 				alert.sendKeys(text);
 				alert.accept();
-
+				Reports.reportStep("PASS", "Send Text to Alert is Succesfull");
 			}
 			catch(Exception ex)
 			{
