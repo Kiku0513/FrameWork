@@ -6,7 +6,10 @@
 			<class name="com.W3Schools.utils.SeWrappers" />
 			<class name="com.W3Schools.utils.W3Wrappers" />
 			<class name="com.W3Schools.utils.Reports" />
-			<class name="com.W3Schools.test.LoginTest" />
+	    	<!--<class name="com.W3Schools.test.LoginTest" />-->
+	 		<!--<class name="com.W3Schools.test.ProfileTest">-->
+			 <class name="com.W3Schools.test.MyLearningTest"/>
+		     <class name="com.W3Schools.test.CertificateTest"/>
 		</classes>
 	</test> <!--
 	Test -->

@@ -13,7 +13,7 @@ public class HomePage extends SeWrappers
 
 	public void waitForLearning()
 	{
-		waitForMeExplicit(myLearning,20);
+		waitForMeExplicit(myLearning,10);
 	}
 
 }

@@ -25,7 +25,7 @@ public class Reports
 		
 		
 		@BeforeSuite(alwaysRun=true)
-		public void startReport()
+		public static void startReport()
 		{
 			try
 			{

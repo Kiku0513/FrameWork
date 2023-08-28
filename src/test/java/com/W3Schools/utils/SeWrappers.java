@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,7 +31,9 @@ public static WebDriver driver=null;
 		{
 			try
 			{
-				driver= new ChromeDriver();
+				//driver= new ChromeDriver();
+				driver=new EdgeDriver();
+				
 				driver.manage().window().maximize();
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 				driver.get(url);
@@ -160,7 +163,7 @@ public static WebDriver driver=null;
 			}
 		}
 		//explicit wait
-		public void waitForMeExplicit(WebElement ele, int timeout)
+		public  void waitForMeExplicit(WebElement ele, int timeout)
 		{
 			try
 			{
@@ -312,6 +315,7 @@ public static WebDriver driver=null;
 			catch(Exception ex)
 			{
 				System.out.println("problem in typeText in alert");
+				Reports.reportStep("FAIL", "Problem  in TypeText in alert from alert");
 				ex.printStackTrace();
 			}
 		}
@@ -322,11 +326,13 @@ public static WebDriver driver=null;
 			try
 			{
 				driver.switchTo().frame(ele);
+				Reports.reportStep("PASS", "Switch to Frame by Webelement is Succesfull");
 
 			}
 			catch(Exception ex)
 			{
 				System.out.println("problem in frames");
+				Reports.reportStep("FAIL", "Problem  in Switch frames By WebElement");
 				ex.printStackTrace();
 			}
 		}
